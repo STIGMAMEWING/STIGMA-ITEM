@@ -87,7 +87,7 @@
     const itemBaru = { nama, harga, deskripsi, usernameRoblox, stok, foto: fotoArray };
 
     try {
-      const res = await fetch("https://api-stigma.vercel.app/api/produk", {
+      const res = await fetch("http://localhost:3000/api/status", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(itemBaru)
@@ -152,7 +152,7 @@
   }
 
   // Status API
-  fetch("https://api-stigma.vercel.app/api/produk")
+  fetch("http://localhost:3000/api/status")
     .then(res => res.json())
     .then(data => {
       document.getElementById("apiStatus").innerText = data.status;
@@ -164,3 +164,4 @@
 </script>
 </body>
 </html>
+
