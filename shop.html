@@ -53,7 +53,16 @@
 
 
   <script>
-    let produk = JSON.parse(localStorage.getItem("produk")) || [];
+    let produk = [];
+
+fetch("https://api-stigma.vercel.app/api/produk")
+  .then(res => res.json())
+  .then(data => {
+    produk = data;   // simpan hasil fetch
+    renderProduk();  // render produk ke halaman
+  })
+  .catch(err => console.error("Error ambil produk:", err));
+
 
     // Variabel untuk modal
     const imageModal = document.getElementById('imageModal');
@@ -214,7 +223,7 @@
   </script>
 
 <script>
-  fetch("http://localhost:3000/api/status")
+  fetch("https://api-stigma.vercel.app/api/produk")
     .then(res => res.json())
     .then(data => {
       console.log(data); // Cek di console browser
@@ -224,5 +233,4 @@
 </script>
 
 </body>
-
 </html>
