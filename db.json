@@ -4,37 +4,28 @@
       "id": 1,
       "nama": "Sword of Destiny",
       "harga": 50000,
-      "deskripsi": "Pedang legendaris untuk petualangan epik",
-      "usernameRoblox": "SwordMaster123",
+      "deskripsi": "Pedang legendaris dengan kekuatan magis",
+      "usernameRoblox": "DestinyWarrior",
       "stok": 5,
-      "foto": [
-        "sword1.jpg",
-        "sword2.jpg"
-      ]
+      "foto": ["sword1.jpg", "sword2.jpg"]
     },
     {
       "id": 2,
       "nama": "Mystic Armor",
       "harga": 75000,
-      "deskripsi": "Armor mistis yang memberikan perlindungan maksimal",
-      "usernameRoblox": "ArmorWizard456",
+      "deskripsi": "Armor mistis yang melindungi dari serangan",
+      "usernameRoblox": "MysticKnight",
       "stok": 3,
-      "foto": [
-        "armor1.jpg"
-      ]
+      "foto": ["armor1.jpg"]
     },
     {
       "id": 3,
       "nama": "Dragon Egg",
       "harga": 100000,
-      "deskripsi": "Telur naga langka untuk koleksi",
-      "usernameRoblox": "DragonKeeper789",
+      "deskripsi": "Telur naga langka yang bisa menetas",
+      "usernameRoblox": "DragonMaster",
       "stok": 1,
-      "foto": [
-        "egg1.jpg",
-        "egg2.jpg",
-        "egg3.jpg"
-      ]
+      "foto": ["egg1.jpg", "egg2.jpg"]
     }
   ],
   "transactions": []

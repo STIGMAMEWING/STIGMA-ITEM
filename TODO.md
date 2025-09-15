@@ -1,10 +1,9 @@
 # TODO: Perbaiki Aplikasi STIGMA Item
 
-- [x] 1. Perbaiki URL API di admin.html agar menggunakan localhost:3000/api/...
-- [x] 2. Perbaiki URL API di shop.html agar menggunakan localhost:3000/api/...
-- [x] 3. Perbaiki URL API di form.html agar menggunakan localhost:3000/api/...
-- [x] 4. Perbaiki URL API di login.html agar menggunakan localhost:3000/api/...
-- [x] 5. Perbaiki URL API di index.html agar menggunakan localhost:3000/api/...
-- [x] 6. Tambahkan data contoh produk ke db.json
-- [x] 7. Verifikasi server.js benar dan berjalan dengan baik
-- [ ] 8. Jalankan server dan uji aplikasi
+- [ ] Perbaiki URL API di admin.html agar menggunakan localhost:3000
+- [ ] Perbaiki URL API di shop.html agar menggunakan localhost:3000
+- [ ] Perbaiki URL API di form.html agar menggunakan localhost:3000
+- [ ] Perbaiki URL API di login.html agar menggunakan localhost:3000
+- [ ] Perbaiki URL API di index.html agar menggunakan localhost:3000
+- [ ] Tambahkan data produk contoh ke db.json
+- [ ] Jalankan server dan test aplikasi
