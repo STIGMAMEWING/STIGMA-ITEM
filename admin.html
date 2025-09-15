@@ -131,7 +131,7 @@
     // Load data
     async function loadData() {
       try {
-        const res = await fetch("http://localhost:3000/api/produk");
+        const res = await fetch("/api/produk");
         allData = await res.json();
         renderProduk(allData);
       } catch (err) {
@@ -186,7 +186,7 @@
       const itemBaru = { nama, harga, deskripsi, usernameRoblox, stok, foto: fotoArray };
 
       try {
-        const res = await fetch("http://localhost:3000/api/produk", {
+        const res = await fetch("/api/produk", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(itemBaru),
@@ -235,7 +235,7 @@
       localStorage.getItem("loggedInUser");
 
     // Status API
-    fetch("http://localhost:3000/api/status")
+    fetch("/api/status")
       .then((res) => res.json())
       .then((data) => {
         document.getElementById("apiStatus").innerText = data.status;

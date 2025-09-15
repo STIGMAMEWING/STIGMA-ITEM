@@ -55,7 +55,7 @@
   <script>
     let produk = [];
 
-fetch("http://localhost:3000/api/produk")
+fetch("/api/produk")
   .then(res => res.json())
   .then(data => {
     produk = data;   // simpan hasil fetch
