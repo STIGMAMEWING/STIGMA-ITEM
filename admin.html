@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Galaksi Admin</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-gradient-to-br from-gray-900 to-black text-white min-h-screen flex flex-col relative overflow-hidden">
 
@@ -21,28 +21,45 @@
   <div class="twinkling"></div>
   <div class="clouds"></div>
 
-  <header class="relative z-10 p-4 border-b border-gray-700 flex items-center justify-between bg-gray-900/70 backdrop-blur-sm">
+  <header
+    class="relative z-10 p-4 border-b border-gray-700 flex items-center justify-between bg-gray-900/70 backdrop-blur-sm"
+  >
     <div class="flex items-center gap-4">
-      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-600">🌌 Galaksi Admin</h1>
+      <h1
+        class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-600"
+      >
+        🌌 Galaksi Admin
+      </h1>
       <div class="text-sm text-gray-300">
-        Selamat datang, <span id="profileUsername" class="font-semibold text-blue-400"></span>
+        Selamat datang,
+        <span id="profileUsername" class="font-semibold text-blue-400"></span>
       </div>
     </div>
     <div class="flex items-center gap-4 text-sm">
       Total: <span id="total">0</span> |
       <span class="text-green-400">Tersedia: <span id="tersedia">0</span></span> |
       <span class="text-red-400">Terjual: <span id="terjual">0</span></span>
-      <button onclick="logout()" class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded-lg text-sm font-semibold">Logout</button>
+      <button
+        onclick="logout()"
+        class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded-lg text-sm font-semibold"
+      >
+        Logout
+      </button>
     </div>
   </header>
 
   <main class="flex-1 p-4 flex gap-6 relative z-10">
-
     <!-- Daftar produk -->
-    <div class="flex-1 bg-gray-800/60 rounded-xl p-6 shadow-2xl border border-gray-700">
+    <div
+      class="flex-1 bg-gray-800/60 rounded-xl p-6 shadow-2xl border border-gray-700"
+    >
       <h2 class="text-xl font-semibold mb-4 text-purple-300">📦 Daftar Item Galaksi</h2>
-      <input id="search" type="text" placeholder="Cari item di galaksi..."
-        class="w-full mb-4 px-4 py-2 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 border border-gray-600">
+      <input
+        id="search"
+        type="text"
+        placeholder="Cari item di galaksi..."
+        class="w-full mb-4 px-4 py-2 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 border border-gray-600"
+      />
       <ul id="stokList" class="space-y-3 text-sm">
         <p class="text-gray-400">Belum ada item ditambahkan...</p>
       </ul>
@@ -50,141 +67,183 @@
     </div>
 
     <!-- Tambah produk -->
-    <div class="w-80 bg-gray-800/60 rounded-xl p-6 shadow-2xl border border-gray-700">
+    <div
+      class="w-80 bg-gray-800/60 rounded-xl p-6 shadow-2xl border border-gray-700"
+    >
       <h2 class="text-xl font-semibold mb-4 text-yellow-300">➕ Tambah Item Baru</h2>
-      <input id="namaProduk" type="text" placeholder="Nama item..."
-        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600">
-      <input id="hargaProduk" type="number" placeholder="Harga (Rp)"
-        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600">
-      <textarea id="deskripsiProduk" placeholder="Deskripsi item..."
-        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600"></textarea>
-      <input type="text" id="usernameRoblox" placeholder="Roblox ID..."
-        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600">
-      <input type="number" id="stokProduk" placeholder="Jumlah Stok..."
-        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600">
-      <label class="block text-sm text-gray-300 mb-2">Unggah Foto Item (maks. 20):</label>
-      <input type="file" id="fotoProduk" accept="image/*" multiple
-        class="w-full mb-4 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600">
-      <button onclick="tambahProduk()"
-        class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold text-lg">Tambahkan ke Galaksi</button>
-      <button onclick="resetForm()"
-        class="w-full bg-gray-600 hover:bg-gray-700 py-3 rounded-lg font-semibold mt-3 text-lg">Reset Form</button>
+      <input
+        id="namaProduk"
+        type="text"
+        placeholder="Nama item..."
+        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600"
+      />
+      <input
+        id="hargaProduk"
+        type="number"
+        placeholder="Harga (Rp)"
+        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600"
+      />
+      <textarea
+        id="deskripsiProduk"
+        placeholder="Deskripsi item..."
+        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600"
+      ></textarea>
+      <input
+        type="text"
+        id="usernameRoblox"
+        placeholder="Roblox ID..."
+        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600"
+      />
+      <input
+        type="number"
+        id="stokProduk"
+        placeholder="Jumlah Stok..."
+        class="w-full mb-3 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600"
+      />
+      <label class="block text-sm text-gray-300 mb-2"
+        >Unggah Foto Item (maks. 20):</label
+      >
+      <input
+        type="file"
+        id="fotoProduk"
+        accept="image/*"
+        multiple
+        class="w-full mb-4 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600"
+      />
+      <button
+        onclick="tambahProduk()"
+        class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold text-lg"
+      >
+        Tambahkan ke Galaksi
+      </button>
+      <button
+        onclick="resetForm()"
+        class="w-full bg-gray-600 hover:bg-gray-700 py-3 rounded-lg font-semibold mt-3 text-lg"
+      >
+        Reset Form
+      </button>
     </div>
   </main>
 
-<script>
-  let allData = [];
+  <script>
+    let allData = [];
 
-  // Load data
-  async function loadData() {
-    try {
-      const res = await fetch("http://localhost:3000/api/produk");
-      allData = await res.json();
-      renderProduk(allData);
-    } catch (err) {
-      console.error("Error load data:", err);
+    // Load data
+    async function loadData() {
+      try {
+        const res = await fetch("http://localhost:3000/api/produk");
+        allData = await res.json();
+        renderProduk(allData);
+      } catch (err) {
+        console.error("Error load data:", err);
+      }
     }
-  }
 
-  // Render produk
-  function renderProduk(data) {
-    const list = document.getElementById("stokList");
-    list.innerHTML = "";
+    // Render produk
+    function renderProduk(data) {
+      const list = document.getElementById("stokList");
+      list.innerHTML = "";
 
-    if (data.length === 0) {
-      list.innerHTML = `<p class="text-gray-400">Belum ada item ditambahkan...</p>`;
-    } else {
-      data.forEach(item => {
-        list.innerHTML += `
+      if (data.length === 0) {
+        list.innerHTML = `<p class="text-gray-400">Belum ada item ditambahkan...</p>`;
+      } else {
+        data.forEach((item) => {
+          list.innerHTML += `
           <li class="p-3 bg-gray-700 rounded-lg flex justify-between">
             <div>
-              <span class="font-semibold">${item.nama}</span><br>
+              <span class="font-semibold">${item.nama}</span><br />
               <span class="text-gray-400">Rp${item.harga}</span>
             </div>
             <span class="text-sm text-green-400">Stok: ${item.stok}</span>
           </li>`;
-      });
+        });
+      }
+      updateStats(data);
     }
-    updateStats(data);
-  }
 
-  // Update stats
-  function updateStats(data) {
-    document.getElementById("total").innerText = data.length;
-    document.getElementById("tersedia").innerText = data.filter(p => p.stok > 0).length;
-    document.getElementById("terjual").innerText = data.filter(p => p.stok === 0).length;
-  }
-
-  // Tambah produk
-  async function tambahProduk() {
-    const nama = document.getElementById("namaProduk").value;
-    const harga = document.getElementById("hargaProduk").value;
-    const deskripsi = document.getElementById("deskripsiProduk").value;
-    const usernameRoblox = document.getElementById("usernameRoblox").value;
-    const stok = document.getElementById("stokProduk").value;
-
-    const fotoInput = document.getElementById("fotoProduk");
-    const fotoArray = Array.from(fotoInput.files).map(f => f.name);
-
-    const itemBaru = { nama, harga, deskripsi, usernameRoblox, stok, foto: fotoArray };
-
-    try {
-      const res = await fetch("http://localhost:3000/api/produk", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(itemBaru)
-      });
-
-      const data = await res.json();
-      console.log("Produk berhasil ditambahkan:", data);
-
-      alert("Produk berhasil ditambahkan!");
-      resetForm();
-      loadData();
-    } catch (err) {
-      console.error("Error tambah produk:", err);
-      alert("Gagal menambahkan produk!");
+    // Update stats
+    function updateStats(data) {
+      document.getElementById("total").innerText = data.length;
+      document.getElementById("tersedia").innerText = data.filter(
+        (p) => p.stok > 0
+      ).length;
+      document.getElementById("terjual").innerText = data.filter(
+        (p) => p.stok === 0
+      ).length;
     }
-  }
 
-  // Reset form
-  function resetForm() {
-    document.getElementById("namaProduk").value = "";
-    document.getElementById("hargaProduk").value = "";
-    document.getElementById("deskripsiProduk").value = "";
-    document.getElementById("usernameRoblox").value = "";
-    document.getElementById("stokProduk").value = "";
-    document.getElementById("fotoProduk").value = "";
-  }
+    // Tambah produk
+    async function tambahProduk() {
+      const nama = document.getElementById("namaProduk").value;
+      const harga = document.getElementById("hargaProduk").value;
+      const deskripsi = document.getElementById("deskripsiProduk").value;
+      const usernameRoblox = document.getElementById("usernameRoblox").value;
+      const stok = document.getElementById("stokProduk").value;
 
-  // Search
-  document.getElementById("search").addEventListener("input", function() {
-    const keyword = this.value.toLowerCase();
-    const filtered = allData.filter(p => p.nama.toLowerCase().includes(keyword));
-    renderProduk(filtered);
-  });
+      const fotoInput = document.getElementById("fotoProduk");
+      const fotoArray = Array.from(fotoInput.files).map((f) => f.name);
 
-  // Logout
-  function logout() {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("loggedInUser");
-    window.location.href = "login.html";
-  }
+      const itemBaru = { nama, harga, deskripsi, usernameRoblox, stok, foto: fotoArray };
 
-  // Set profile
-  document.getElementById("profileUsername").innerText = localStorage.getItem("loggedInUser");
+      try {
+        const res = await fetch("http://localhost:3000/api/produk", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(itemBaru),
+        });
 
-  // Status API
-  fetch("http://localhost:3000/api/status")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("apiStatus").innerText = data.status;
-    })
-    .catch(err => console.error("Error:", err));
+        const data = await res.json();
+        console.log("Produk berhasil ditambahkan:", data);
 
-  // Load awal
-  loadData();
-</script>
+        alert("Produk berhasil ditambahkan!");
+        resetForm();
+        loadData();
+      } catch (err) {
+        console.error("Error tambah produk:", err);
+        alert("Gagal menambahkan produk!");
+      }
+    }
+
+    // Reset form
+    function resetForm() {
+      document.getElementById("namaProduk").value = "";
+      document.getElementById("hargaProduk").value = "";
+      document.getElementById("deskripsiProduk").value = "";
+      document.getElementById("usernameRoblox").value = "";
+      document.getElementById("stokProduk").value = "";
+      document.getElementById("fotoProduk").value = "";
+    }
+
+    // Search
+    document.getElementById("search").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      const filtered = allData.filter((p) =>
+        p.nama.toLowerCase().includes(keyword)
+      );
+      renderProduk(filtered);
+    });
+
+    // Logout
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+
+    // Set profile
+    document.getElementById("profileUsername").innerText =
+      localStorage.getItem("loggedInUser");
+
+    // Status API
+    fetch("http://localhost:3000/api/status")
+      .then((res) => res.json())
+      .then((data) => {
+        document.getElementById("apiStatus").innerText = data.status;
+      })
+      .catch((err) => console.error("Error:", err));
+
+    // Load awal
+    loadData();
+  </script>
 </body>
 </html>
-
