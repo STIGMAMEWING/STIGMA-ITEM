@@ -78,7 +78,7 @@
   // Load data
   async function loadData() {
     try {
-      const res = await fetch("http://localhost:3000/api/produk");
+      const res = await fetch("http://localhost:3001/api/produk");
       allData = await res.json();
       renderProduk(allData);
     } catch (err) {
@@ -129,7 +129,7 @@
     const itemBaru = { nama, harga, deskripsi, usernameRoblox, stok, foto: fotoArray };
 
     try {
-      const res = await fetch("http://localhost:3000/api/produk", {
+      const res = await fetch("http://localhost:3001/api/produk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(itemBaru)
@@ -175,7 +175,7 @@
   document.getElementById("profileUsername").innerText = localStorage.getItem("loggedInUser");
 
   // Status API
-  fetch("http://localhost:3000/api/status")
+  fetch("http://localhost:3001/api/status")
     .then(res => res.json())
     .then(data => {
       document.getElementById("apiStatus").innerText = data.status;

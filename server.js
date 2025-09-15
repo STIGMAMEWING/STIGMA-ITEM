@@ -2,10 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs-extra");
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
+app.use(express.static('.'));
 
 const DB_FILE = "./db.json";
 
@@ -73,6 +74,7 @@ app.delete("/api/transactions/:id", (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+  console.log(`🚀 Akses dari jaringan lain: http://[IP_ADDRESS]:${PORT}`);
 });
