@@ -7,7 +7,10 @@
       "deskripsi": "Pedang legendaris untuk petualangan epik",
       "usernameRoblox": "SwordMaster123",
       "stok": 5,
-      "foto": ["sword1.jpg", "sword2.jpg"]
+      "foto": [
+        "sword1.jpg",
+        "sword2.jpg"
+      ]
     },
     {
       "id": 2,
@@ -16,7 +19,9 @@
       "deskripsi": "Armor mistis yang memberikan perlindungan maksimal",
       "usernameRoblox": "ArmorWizard456",
       "stok": 3,
-      "foto": ["armor1.jpg"]
+      "foto": [
+        "armor1.jpg"
+      ]
     },
     {
       "id": 3,
@@ -25,7 +30,11 @@
       "deskripsi": "Telur naga langka untuk koleksi",
       "usernameRoblox": "DragonKeeper789",
       "stok": 1,
-      "foto": ["egg1.jpg", "egg2.jpg", "egg3.jpg"]
+      "foto": [
+        "egg1.jpg",
+        "egg2.jpg",
+        "egg3.jpg"
+      ]
     }
   ],
   "transactions": []
