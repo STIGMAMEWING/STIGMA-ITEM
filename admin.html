@@ -73,6 +73,48 @@
   </main>
 
 <script>
+  let allData = [];
+
+  // Load data
+  async function loadData() {
+    try {
+      const res = await fetch("http://localhost:3000/api/produk");
+      allData = await res.json();
+      renderProduk(allData);
+    } catch (err) {
+      console.error("Error load data:", err);
+    }
+  }
+
+  // Render produk
+  function renderProduk(data) {
+    const list = document.getElementById("stokList");
+    list.innerHTML = "";
+
+    if (data.length === 0) {
+      list.innerHTML = `<p class="text-gray-400">Belum ada item ditambahkan...</p>`;
+    } else {
+      data.forEach(item => {
+        list.innerHTML += `
+          <li class="p-3 bg-gray-700 rounded-lg flex justify-between">
+            <div>
+              <span class="font-semibold">${item.nama}</span><br>
+              <span class="text-gray-400">Rp${item.harga}</span>
+            </div>
+            <span class="text-sm text-green-400">Stok: ${item.stok}</span>
+          </li>`;
+      });
+    }
+    updateStats(data);
+  }
+
+  // Update stats
+  function updateStats(data) {
+    document.getElementById("total").innerText = data.length;
+    document.getElementById("tersedia").innerText = data.filter(p => p.stok > 0).length;
+    document.getElementById("terjual").innerText = data.filter(p => p.stok === 0).length;
+  }
+
   // Tambah produk
   async function tambahProduk() {
     const nama = document.getElementById("namaProduk").value;
@@ -87,7 +129,7 @@
     const itemBaru = { nama, harga, deskripsi, usernameRoblox, stok, foto: fotoArray };
 
     try {
-      const res = await fetch("http://localhost:3000/api/status", {
+      const res = await fetch("http://localhost:3000/api/produk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(itemBaru)
@@ -98,7 +140,7 @@
 
       alert("Produk berhasil ditambahkan!");
       resetForm();
-      renderProduk();
+      loadData();
     } catch (err) {
       console.error("Error tambah produk:", err);
       alert("Gagal menambahkan produk!");
@@ -115,34 +157,12 @@
     document.getElementById("fotoProduk").value = "";
   }
 
-  // Render produk
-  async function renderProduk() {
-    try {
-      const res = await fetch("https://api-stigma.vercel.app/api/produk");
-      const data = await res.json();
-      console.log("Data produk:", data);
-
-      const list = document.getElementById("stokList");
-      list.innerHTML = "";
-
-      if (data.length === 0) {
-        list.innerHTML = `<p class="text-gray-400">Belum ada item ditambahkan...</p>`;
-      } else {
-        data.forEach(item => {
-          list.innerHTML += `
-            <li class="p-3 bg-gray-700 rounded-lg flex justify-between">
-              <div>
-                <span class="font-semibold">${item.nama}</span><br>
-                <span class="text-gray-400">Rp${item.harga}</span>
-              </div>
-              <span class="text-sm text-green-400">Stok: ${item.stok}</span>
-            </li>`;
-        });
-      }
-    } catch (err) {
-      console.error("Error render produk:", err);
-    }
-  }
+  // Search
+  document.getElementById("search").addEventListener("input", function() {
+    const keyword = this.value.toLowerCase();
+    const filtered = allData.filter(p => p.nama.toLowerCase().includes(keyword));
+    renderProduk(filtered);
+  });
 
   // Logout
   function logout() {
@@ -150,6 +170,9 @@
     localStorage.removeItem("loggedInUser");
     window.location.href = "login.html";
   }
+
+  // Set profile
+  document.getElementById("profileUsername").innerText = localStorage.getItem("loggedInUser");
 
   // Status API
   fetch("http://localhost:3000/api/status")
@@ -160,7 +183,7 @@
     .catch(err => console.error("Error:", err));
 
   // Load awal
-  renderProduk();
+  loadData();
 </script>
 </body>
 </html>

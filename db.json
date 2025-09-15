@@ -1,4 +1,23 @@
 {
-  "produk": [],
+  "produk": [
+    {
+      "id": 1,
+      "nama": "Item Langka 1",
+      "harga": 50000,
+      "deskripsi": "Item Roblox yang sangat langka",
+      "usernameRoblox": "user123",
+      "stok": 5,
+      "foto": ["image1.jpg", "image2.jpg"]
+    },
+    {
+      "id": 2,
+      "nama": "Item Langka 2",
+      "harga": 75000,
+      "deskripsi": "Item Roblox edisi terbatas",
+      "usernameRoblox": "user456",
+      "stok": 3,
+      "foto": ["image3.jpg"]
+    }
+  ],
   "transactions": []
 }

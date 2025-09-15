@@ -55,7 +55,7 @@
   <script>
     let produk = [];
 
-fetch("https://api-stigma.vercel.app/api/produk")
+fetch("http://localhost:3000/api/produk")
   .then(res => res.json())
   .then(data => {
     produk = data;   // simpan hasil fetch
