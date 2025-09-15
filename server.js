@@ -74,7 +74,11 @@ app.delete("/api/transactions/:id", (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
-  console.log(`🚀 Akses dari jaringan lain: http://[IP_ADDRESS]:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+    console.log(`🚀 Akses dari jaringan lain: http://[IP_ADDRESS]:${PORT}`);
+  });
+}
+
+module.exports = app;
