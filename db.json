@@ -2,45 +2,30 @@
   "produk": [
     {
       "id": 1,
-      "nama": "Dominus Aureus",
+      "nama": "Sword of Destiny",
       "harga": 50000,
-      "deskripsi": "Item langka Roblox Dominus Aureus",
-      "usernameRoblox": "RobloxUser1",
-      "stok": 3,
-      "foto": [
-        "dominus.jpg"
-      ]
+      "deskripsi": "Pedang legendaris untuk petualangan epik",
+      "usernameRoblox": "SwordMaster123",
+      "stok": 5,
+      "foto": ["sword1.jpg", "sword2.jpg"]
     },
     {
       "id": 2,
-      "nama": "Sparkle Time Valkyrie",
+      "nama": "Mystic Armor",
       "harga": 75000,
-      "deskripsi": "Helm Sparkle Time Valkyrie yang sangat langka",
-      "usernameRoblox": "RobloxUser2",
-      "stok": 1,
-      "foto": [
-        "valkyrie.jpg"
-      ]
+      "deskripsi": "Armor mistis yang memberikan perlindungan maksimal",
+      "usernameRoblox": "ArmorWizard456",
+      "stok": 3,
+      "foto": ["armor1.jpg"]
     },
     {
       "id": 3,
-      "nama": "Golden Bloxy Cola",
-      "harga": 25000,
-      "deskripsi": "Minuman emas terbatas",
-      "usernameRoblox": "RobloxUser3",
-      "stok": 5,
-      "foto": [
-        "cola.jpg"
-      ]
-    },
-    {
-      "id": 1757911780676,
-      "nama": "Test Item",
-      "harga": 1000,
-      "deskripsi": "Test",
-      "usernameRoblox": "test",
+      "nama": "Dragon Egg",
+      "harga": 100000,
+      "deskripsi": "Telur naga langka untuk koleksi",
+      "usernameRoblox": "DragonKeeper789",
       "stok": 1,
-      "foto": []
+      "foto": ["egg1.jpg", "egg2.jpg", "egg3.jpg"]
     }
   ],
   "transactions": []
